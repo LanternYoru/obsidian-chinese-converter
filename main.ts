@@ -1,4 +1,4 @@
-import { Plugin, Editor, MarkdownView } from 'obsidian';
+import { Plugin, Editor, MarkdownView , Notice} from 'obsidian';
 import { Converter } from 'opencc-js';
 
 // 定义一个类型来表示转换模式，更清晰易读
@@ -15,10 +15,10 @@ export default class ChineseConverterPlugin extends Plugin {
 	private currentMode: ConversionMode = 's2t'; 
 
 	async onload() {
-		console.log('正在加载中文简繁转换插件...');
+		console.debug('正在加载中文简繁转换插件...');
 
-		this.s2tConverter = await Converter({ from: 'cn', to: 't' });
-		this.t2sConverter = await Converter({ from: 't', to: 'cn' });
+		this.s2tConverter = Converter({ from: 'cn', to: 't' });
+		this.t2sConverter = Converter({ from: 't', to: 'cn' });
 
 		// --- 添加 Ribbon 图标 ---
 		// 初始图标使用'languages'作为占位符，我们马上会用文字替换它
@@ -31,19 +31,19 @@ export default class ChineseConverterPlugin extends Plugin {
 		// 保留之前的命令，这样用户仍然可以通过命令面板使用
 		this.addCommand({
 			id: 'convert-simplified-to-traditional',
-			name: 'Convert Simplified to Traditional (简体转繁体)',
+			name: 'Convert simplified to traditional (简体转繁体)',
 			editorCallback: (editor: Editor) => this.convertText(editor, 's2t'),
 		});
 
 		this.addCommand({
 			id: 'convert-traditional-to-simplified',
-			name: 'Convert Traditional to Simplified (繁体转简体)',
+			name: 'Convert traditional to simplified (繁体转简体)',
 			editorCallback: (editor: Editor) => this.convertText(editor, 't2s'),
 		});
 	}
 
 	onunload() {
-		console.log('正在卸载中文简繁转换插件...');
+		console.debug('正在卸载中文简繁转换插件...');
 	}
 
 	/**
@@ -64,7 +64,7 @@ export default class ChineseConverterPlugin extends Plugin {
 			this.updateRibbonIcon();
 		} else {
 			// 如果不在编辑视图，可以给个提示
-			console.log("请在笔记编辑视图下点击此按钮。");
+			new Notice("请在笔记编辑视图下点击此按钮。"); 
 		}
 	}
 
