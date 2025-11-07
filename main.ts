@@ -14,7 +14,7 @@ export default class ChineseConverterPlugin extends Plugin {
 	// 用于追踪当前的转换模式，默认是's2t'（简转繁）
 	private currentMode: ConversionMode = 's2t'; 
 
-	async onload() {
+	onload() {
 		console.debug('正在加载中文简繁转换插件...');
 
 		this.s2tConverter = Converter({ from: 'cn', to: 't' });
