@@ -1,9 +1,9 @@
 {
 	"id": "chinese-converter",
-	"name": "中文简繁转换",
+	"name": "Chinese Converter",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "一个简单的插件，用于在简体中文和繁体中文之间进行转换。",
-	"author": "LanternYORU",
+	"description": "A simple plugin to convert text between Simplified and Traditional Chinese.",
+	"author": "LanternYoru",
 	"isDesktopOnly": false
 }

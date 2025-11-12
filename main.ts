@@ -15,7 +15,6 @@ export default class ChineseConverterPlugin extends Plugin {
 	private currentMode: ConversionMode = 's2t'; 
 
 	onload() {
-		console.debug('正在加载中文简繁转换插件...');
 
 		this.s2tConverter = Converter({ from: 'cn', to: 't' });
 		this.t2sConverter = Converter({ from: 't', to: 'cn' });
@@ -42,9 +41,6 @@ export default class ChineseConverterPlugin extends Plugin {
 		});
 	}
 
-	onunload() {
-		console.debug('正在卸载中文简繁转换插件...');
-	}
 
 	/**
 	 * Ribbon 图标点击事件的核心处理函数

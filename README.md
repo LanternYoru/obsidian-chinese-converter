@@ -1,4 +1,37 @@
-# Obsidian 中文简繁转换 (Chinese Converter)
+# Chinese Converter
+
+A simple Obsidian plugin to quickly convert text between Simplified Chinese and Traditional Chinese.
+
+## Features
+
+* Convert text using the Ribbon icon. The icon state toggles automatically:
+    * When the icon shows **"繁"**, it will convert Simplified -> Traditional.
+    * When the icon shows **"简"**, it will convert Traditional -> Simplified.
+* Supports conversion via Command Palette:
+    * `Convert simplified to traditional`
+    * `Convert traditional to simplified`
+* Works on selected text or the entire document if no text is selected.
+
+## How to Use
+
+1.  Click the **"繁"** / **"简"** icon in the left-side Ribbon.
+2.  Or, open the Command Palette (Cmd/Ctrl + P) and search for "Convert...".
+
+### Demo
+
+![插件功能演示](演示.gif)
+
+
+## Author
+
+[LanternYoru](https://github.com/LanternYoru)
+
+
+---
+
+
+
+# 中文简繁转换 (Chinese Converter)
 
 一个简单的 Obsidian 插件，用于在简体中文和繁体中文之间快速转换。
 
@@ -20,17 +53,6 @@
 ### 演示
 
 ![插件功能演示](演示.gif)
-
-## 安装
-
-### 从社区插件市场安装
-
-1.  在 Obsidian 中打开 `设置` > `第三方插件`。
-2.  确保安全模式为 **关闭**。
-3.  点击 `社区插件` > `浏览`。
-4.  搜索 "Chinese Converter"。
-5.  点击 `安装`。
-6.  安装完成后，在“已安装插件”列表中启用本插件。
 
 ## 作者
 
